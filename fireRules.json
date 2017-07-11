@@ -1,0 +1,21 @@
+{
+  "rules": {
+    ".read": true,
+    ".write": true,
+    "bNumber" : {
+      ".validate" : "newData.isNumber() && newData.val() > 99999999 && newData.val() < 1000000000"
+    },
+    "name" : { 
+      ".validate" : "newData.isString() && newData.val().length > 1 && newData.val().length < 49"
+    },
+    "primaryBusiness" : {
+      ".validate" : "newData.isString() && newData.val().matches(/Fisher|Distributor|Processor|Fish Monger/)"
+    },
+    "address" : {
+      ".validate" : "newData.isString() && newData.val().length < 51"
+    },
+    "location" : {
+      ".validate" : "newData.isString() && newData.val().matches(/AB|BC|MB|NB|NL|NS|NT|NU|ON|PE|QC|SK|YT|\\S/)"
+    }
+  }
+}
